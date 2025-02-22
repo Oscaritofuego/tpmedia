@@ -1,3 +1,4 @@
+
 package mediatheque;
 
 import java.util.LinkedList;
@@ -17,17 +18,15 @@ public class Mediatheque {
 	}
 	
 	public void printOnlyBooks() {
-		throw new UnsupportedOperationException("Not supported yet."); 
-		/*
-		//avec instanceof
 		for (Item i : items)
-			if (i instanceof Book)
-				System.out.println(i);
-		*/
+			i.accept(new BookVisitor());
 	}
 
 	public void printOnlyCDs() {
-		throw new UnsupportedOperationException("Not supported yet."); 
+		for (Item i : items) {
+			i.accept(new CDVisitor());
+		}
 	}
+
 
 }

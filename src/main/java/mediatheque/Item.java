@@ -1,3 +1,4 @@
+
 package mediatheque;
 
 public abstract class Item {
@@ -10,15 +11,17 @@ public abstract class Item {
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
-	public abstract void print() ;
+	public abstract void print();
 
 	@Override
 	public String toString() {
-		return "title=" + title ;
+		return "title=" + title;
 	}
-	
+
+	public abstract void accept(ItemVisitor v);
 }
